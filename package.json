@@ -1,0 +1,35 @@
+{
+  "name": "top-chef",
+  "version": "1.2.0",
+  "description": "Have real meals at real affordable rates- you're worth it!",
+  "main": "scraper.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "ajax": "0.0.4",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "node": "^9.5.0",
+    "node-fetch": "^2.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "string-similarity": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mo-op/top-chef.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mo-op/top-chef/issues"
+  },
+  "homepage": "https://github.com/mo-op/top-chef#readme"
+}
