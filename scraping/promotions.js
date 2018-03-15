@@ -1,8 +1,8 @@
 const request2 = require('request');
 const fs = require('fs');
 
-if (fs.existsSync('./data/proms.json')) {
-  fs.truncate('./data/proms.json', 0, function() {
+if (fs.existsSync('./data/promotions.json')) {
+  fs.truncate('./data/promotions.json', 0, function() {
   })
 }
 
@@ -19,7 +19,7 @@ lineReader.on('line', function(line) {
 		var index = 0;
 		var result = JSON.parse(body);
 		var rest = {};
-		var proms = [];
+		var promotions = [];
 		var promoFound = false;
 	   
 		for (var i = 0; i < result.length; i++) {
@@ -33,9 +33,9 @@ lineReader.on('line', function(line) {
 			  && result[i]['is_special_offer']) {
 			
 			promoFound = true;
-			proms[index] = {};
-			proms[index]['title'] = result[i]['title'];
-			proms[index]['exclusions'] = result[i]['exclusions'];
+			promotions[index] = {};
+			promotions[index]['title'] = result[i]['title'];
+			promotions[index]['exclusions'] = result[i]['exclusions'];
 			index += 1;
 		  }
 		}
@@ -43,15 +43,18 @@ lineReader.on('line', function(line) {
 		  rest['name'] = content['name']
 		  rest['address'] = content['address']
 		  rest['stars'] = content['stars']
-		  rest['promotions'] = proms
+		  rest['promotions'] = promotions
 		  rest['link'] = content['link']
 
 		  try {
-			fs.appendFile("./data/promotions.json", JSON.stringify(rest) + ",\n", function() {});
+			fs.appendFile("./data/promotions.json", JSON.stringify(rest) + "\n", function() {});
+			fs.appendFile("./food-app/src/promotions.json", JSON.stringify(rest) + ",\n", function() {});
+
 		  } catch (err) {
 			console.log(err);
 		  }
 		}
+
   }).on('error', function(err) {
     console.log(err)
   }).end()

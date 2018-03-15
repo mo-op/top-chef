@@ -1,5 +1,7 @@
 
 var childProcess = require('child_process');
+const fs = require('fs');
+
 
 function runScript(scriptPath, callback) {
 
@@ -63,7 +65,7 @@ function continueScrapingFork(){
 		runScript('./scraping/lafourchette.js', function(err){
 		  if (err) throw err;
 			console.log('We just scraped the Fourchette!');
-			fourth();
+			lookForPromotions();
 		});
 		resolve();
 
@@ -71,15 +73,21 @@ function continueScrapingFork(){
 }
 
 // Scrap promotions
-function fourth(){
-	 	 return new Promise(function(resolve, reject){
+function lookForPromotions(){
+		fs.appendFile("./food-app/src/promotions.json", "[", function() {});
+
+	 	return new Promise(function(resolve, reject){
 		runScript('./scraping/promotions.js', function(err){
-		  if (err) throw err;
-			console.log('finished running promotions.js, search for promotions complete');
+		if (err) throw err;
+		console.log('And we have found all the promotions!');
 		});
 		resolve();
+
+		fs.appendFile("./food-app/src/promotions.json", "]", function() {});
+
 });
 }
+
 
 
 

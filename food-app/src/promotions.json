@@ -1,0 +1,4 @@
+[{"name":"Leroy's Restaurant","address":{"address_locality":"Paris","postal_code":"75006"},"promotions":[{"title":"-30% off the \"à la carte\" menu!","exclusions":"Set menus and drinks not included"}],"link":"https://www.lafourchette.com/restaurant/leroy-s-restaurant/297223"},
+{"name":"Dominique Bouchet","address":{"address_locality":"Paris","postal_code":"75008"},"promotions":[{"title":"-20% on « MENU autour des Aperges et de ses vins », or 120,00 € instead of 150,00 €","exclusions":"Price per person."}],"link":"https://www.lafourchette.com/restaurant/dominique-bouchet/310829"},
+{"name":"La Grange de Belle Eglise","address":{"address_locality":"Belle-Église","postal_code":"60540"},"promotions":[{"title":"-30% sur la carte","exclusions":"Set menus and drinks not included"}],"link":"https://www.lafourchette.com/restaurant/la-grange-de-belle-eglise/28557"}
+]
